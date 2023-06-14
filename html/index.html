@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>optimizat.io - Elimine processos repetitivos</title>
+  <link rel="icon" type="image/x-icon" href="../images/icon.jpg">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Cabeçalho */
+    header {
+      background-color: #293241;
+      color: #fff;
+      padding: 20px;
+      font-family: "Bebas Neue", Bebas Neue;
+    }
+
+    header img {
+      max-width: 50px;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header nav ul li {
+      margin-right: 15px;
+    }
+
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    /* Banner */
+    #banner {
+      background-image: url(../images/banner.jpg);
+      text-align: center;
+      padding-top: 14%;
+      padding-bottom: 14%;
+    }
+
+    #banner h1 {
+      font-size: 70px;
+      margin-bottom: 20px;
+      color: rgb(0, 172, 77);
+      font-family: "Bebas Neue", Bebas Neue;
+    }
+
+    #banner h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: rgb(255, 255, 255);
+      font-family: "Open Sans", sans-serif;
+    }
+
+    #banner p {
+      font-size: 38px;
+      margin-bottom: 30px;
+      color: #fff;
+      font-family: "Bebas Neue", Bebas Neue;
+    }
+
+    #banner a {
+      background-color: #293241;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    /* Seção Sobre */
+    #sobre {
+      background-color: #fff;
+      padding: 50px;
+    }
+
+    #sobre h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #293241;
+    }
+
+    #sobre p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #293241;
+    }
+
+    /* Seção Serviços */
+    #servicos {
+      background-color: #f2f2f2;
+      padding: 50px;
+    }
+
+    #servicos h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #293241;
+    }
+
+    #servicos ul{
+      padding-bottom: 2%;
+    }
+
+
+    #servicos img {
+      max-width: 150px;
+    }
+
+    #servicos h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #293241;
+    }
+
+    #servicos p {
+      font-size: 16px;
+      color: #293241;
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: #293241;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    .botao-flutuante {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+
+    @font-face {
+  font-family: 'Bebas Neue';
+  src: url('../fonts/BebasNeue-Regular.woff2') format('woff2'),
+       url('../fonts/BebasNeue-Regular.woff') format('woff');
+}
+    /* Estilos adicionais para telas menores */
+    @media (max-width: 768px) {
+      header {
+        padding: 10px;
+      }
+
+      header img {
+        max-width: 100px;
+      }
+
+      header nav ul {
+        justify-content: space-between;
+      }
+
+      #banner h1 {
+        font-size: 24px;
+      }
+
+      #banner p {
+        font-size: 16px;
+      }
+
+      #sobre {
+        padding: 30px;
+      }
+
+      #servicos li {
+        flex-basis: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark justify-content-center">
+      <a class="navbar-brand justify-content-center" href="#"><img src="../images/logo.png" alt="optimizat.io"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Menu de navegação -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#sobre">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#servicos">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://wa.me/5519971634254?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+para+automatizar+um+processo+em+minha+empresa.">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section id="banner">
+    <p>Você ou seus funcionários fazem processos repetitivos e demorados?</p> 
+    <h1>Automatize e Economize.</h1>
+    <h2>Transformamos sua empresa através de soluções de software.</h2>
+    <a href="https://wa.me/5519971634254?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+para+automatizar+um+processo+em+minha+empresa." class="btn btn-light btn-lg">Entre em contato</a>
+  </section>
+
+  <!-- Seção Sobre -->
+  <section id="sobre">
+    <h2>Sobre</h2>
+    <p>A Optimizat.io é uma empresa de tecnologia especializada em eliminar processos manuais e repetitivos por meio de soluções de software eficientes. Nossa missão é simplificar a sua vida e otimizar os processos do seu negócio.</p>
+  </section>
+
+  <!-- Seção Serviços -->
+  <section id="servicos">
+    <h2>Serviços</h2>
+    <ul>
+      <li>
+        <h3><b>Automação</b> - Automatizamos tarefas repetitivas para economizar seu tempo e recursos.</h3>
+        <ul>
+        <li>Preenchimento de Planilhas</li>
+        <li>Envio de emails e documentos recorrentes</li>
+        <li>Geração de arquivos manuais</li>
+      </ul>
+      </li>
+      <li>
+        <h3><b>Integração</b> - Integramos sistemas e processos para aumentar a eficiência da sua empresa.</h3>
+        <ul>
+          <li>Sistemas do governo</li>
+          <li>API's privadas e públicas</li>
+        </ul>
+      </li>
+      <li>
+        <h3><b>Otimização</b> - Otimizamos fluxos de trabalho para melhorar a produtividade e reduzir erros.</h3>
+        <ul>
+          <li>Software já existente na sua empresa</li>
+          <li>Correção de bugs</li>
+          <li>Melhorias</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>Todos os direitos reservados &copy; 2023 Optimizat.io</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <a href="https://wa.me/5519971634254?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+para+automatizar+um+processo+em+minha+empresa." class="botao-flutuante"><img src="../images/whatsapp-logo-png.png" alt="Entre em Contato!"></a>
+</body>
+</html>
