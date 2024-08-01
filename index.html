@@ -1,267 +1,181 @@
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!---------------------------   ####     ##      ####             #######   ####     ####      ##      #### ----------------------------->
+<!---------------------------  ##  ##   ####      ##                   ##  ##  ##     ##      ####    ##  ##----------------------------->
+<!--------------------------- ##        ## ##     ##                  ##   ##   ##    ##      ## ##   ##   ##---------------------------->
+<!---------------------------  #####   ##   ##    ##                 ##    ##   ##    ##     ##   ##  ##   ##---------------------------->
+<!---------------------------      ##  #######    ##                ##     ##   ##    ##     #######  ##   ##---------------------------->
+<!--------------------------- ##   ##  ##   ##    ##               ##      ##   ##    ##     ##   ##  ##   ##---------------------------->
+<!---------------------------  #####   ##   ##   ####             #######   #####    ####    ##   ##   #####----------------------------->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+
+
+    
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>optimizat.io - Elimine processos repetitivos</title>
-  <link rel="icon" type="image/x-icon" href="images/icon.jpg">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-
-    /* Cabeçalho */
-    header {
-      background-color: #293241;
-      color: #fff;
-      padding: 20px;
-      font-family: "Bebas Neue", Bebas Neue;
-    }
-
-    header img {
-      max-width: 50px;
-    }
-
-    header nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    header nav ul li {
-      margin-right: 15px;
-    }
-
-    header nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-    }
-
-    /* Banner */
-    #banner {
-      background-image: url(images/banner.jpg);
-      text-align: center;
-      padding-top: 14%;
-      padding-bottom: 14%;
-    }
-
-    #banner h1 {
-      font-size: 70px;
-      margin-bottom: 20px;
-      color: rgb(0, 172, 77);
-      font-family: "Bebas Neue", Bebas Neue;
-    }
-
-    #banner h2 {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: rgb(255, 255, 255);
-      font-family: "Open Sans", sans-serif;
-    }
-
-    #banner p {
-      font-size: 38px;
-      margin-bottom: 30px;
-      color: #fff;
-      font-family: "Bebas Neue", Bebas Neue;
-    }
-
-    #banner a {
-      background-color: #293241;
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    /* Seção Sobre */
-    #sobre {
-      background-color: #fff;
-      padding: 50px;
-    }
-
-    #sobre h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #293241;
-    }
-
-    #sobre p {
-      font-size: 16px;
-      line-height: 1.5;
-      color: #293241;
-    }
-
-    /* Seção Serviços */
-    #servicos {
-      background-color: #f2f2f2;
-      padding: 50px;
-    }
-
-    #servicos h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #293241;
-    }
-
-    #servicos ul{
-      padding-bottom: 2%;
-    }
-
-
-    #servicos img {
-      max-width: 150px;
-    }
-
-    #servicos h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      color: #293241;
-    }
-
-    #servicos p {
-      font-size: 16px;
-      color: #293241;
-    }
-
-    /* Rodapé */
-    footer {
-      background-color: #293241;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    footer p {
-      margin: 0;
-    }
-
-    .botao-flutuante {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 9999;
-    }
-
-    @font-face {
-  font-family: 'Bebas Neue';
-  src: url('fonts/BebasNeue-Regular.woff2') format('woff2'),
-       url('fonts/BebasNeue-Regular.woff') format('woff');
-}
-    /* Estilos adicionais para telas menores */
-    @media (max-width: 768px) {
-      header {
-        padding: 10px;
-      }
-
-      header img {
-        max-width: 100px;
-      }
-
-      header nav ul {
-        justify-content: space-between;
-      }
-
-      #banner h1 {
-        font-size: 24px;
-      }
-
-      #banner p {
-        font-size: 16px;
-      }
-
-      #sobre {
-        padding: 30px;
-      }
-
-      #servicos li {
-        flex-basis: 100%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chá de Casa Nova</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="casanova.css">
 </head>
 <body>
-  <!-- Cabeçalho -->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark justify-content-center">
-      <a class="navbar-brand justify-content-center" href="#"><img src="images/logo.png" alt="optimizat.io"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- Menu de navegação -->
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#sobre">Sobre</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#servicos">Serviços</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://wa.me/5519971634254?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+para+automatizar+um+processo+em+minha+empresa.">Contato</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+    <header>
+        <div class="header-content">
+            <img src="images/nois.jpeg" alt="Nois" class="personal-photo">
+            <div class="header-text">
+                <h1>Chá de Casa Nova</h1>
+                <p>Lista de Presentes</p>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="product-list">
+            <div class="product-item">
+                <img src="images/batedeira.png" alt="Batedeira Branca">
+                <h2>Batedeira Branca</h2>
+            </div>
+            
+            <div class="product-item">
+                <img src="images/liquidificador.png" alt="Liquidificador Branco">
+                <h2>Liquidificador Branco</h2>
+            </div>
 
-  <!-- Banner -->
-  <section id="banner">
-    <p>Você ou seus funcionários fazem processos repetitivos e demorados?</p> 
-    <h1>Automatize e Economize.</h1>
-    <h2>Transformamos sua empresa através de soluções de software.</h2>
-    <a href="https://wa.me/5519971634254?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+para+automatizar+um+processo+em+minha+empresa." class="btn btn-light btn-lg">Entre em contato</a>
-  </section>
+            <div class="product-item">
+                <img src="images/multiprocessador.png" alt="Multiprocessador Branco">
+                <h2>Multiprocessador Branco</h2>
+            </div>
 
-  <!-- Seção Sobre -->
-  <section id="sobre">
-    <h2>Sobre</h2>
-    <p>A Optimizat.io é uma empresa de tecnologia especializada em eliminar processos manuais e repetitivos por meio de soluções de software eficientes. Nossa missão é simplificar a sua vida e otimizar os processos do seu negócio.</p>
-  </section>
+            <div class="product-item">
+                <img src="images/mixer.png" alt="Mixer Branco">
+                <h2>Mixer Branco</h2>
+            </div>
 
-  <!-- Seção Serviços -->
-  <section id="servicos">
-    <h2>Serviços</h2>
-    <ul>
-      <li>
-        <h3><b>Automação</b> - Automatizamos tarefas repetitivas para economizar seu tempo e recursos.</h3>
-        <ul>
-        <li>Preenchimento de Planilhas</li>
-        <li>Envio de emails e documentos recorrentes</li>
-        <li>Geração de arquivos manuais</li>
-      </ul>
-      </li>
-      <li>
-        <h3><b>Integração</b> - Integramos sistemas e processos para aumentar a eficiência da sua empresa.</h3>
-        <ul>
-          <li>Sistemas do governo</li>
-          <li>API's privadas e públicas</li>
-        </ul>
-      </li>
-      <li>
-        <h3><b>Otimização</b> - Otimizamos fluxos de trabalho para melhorar a produtividade e reduzir erros.</h3>
-        <ul>
-          <li>Software já existente na sua empresa</li>
-          <li>Correção de bugs</li>
-          <li>Melhorias</li>
-        </ul>
-      </li>
-    </ul>
-  </section>
+            <div class="product-item">
+                <img src="images/espremedor.png" alt="Espremedor Branco">
+                <h2>Espremedor Branco</h2>
+            </div>
 
-  <!-- Rodapé -->
-  <footer>
-    <p>Todos os direitos reservados &copy; 2023 Optimizat.io</p>
-  </footer>
+            <div class="product-item">
+                <img src="images/assadeira.png" alt="Assadeira">
+                <h2>Travessa de Forno</h2>
+            </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <a href="https://wa.me/5519971634254?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+para+automatizar+um+processo+em+minha+empresa." class="botao-flutuante"><img src="images/whatsapp-logo-png.png" alt="Entre em Contato!"></a>
+            <div class="product-item">
+                <img src="images/forma-pudim.png" alt="Travessa Pudim de Forno">
+                <h2>Travessa Pudim de Forno</h2>
+            </div>
+
+            <div class="product-item">
+                <img src="images/jarra.png" alt="Jarra de Vidro 2L">
+                <h2>Jarra de Vidro 2L</h2>
+            </div>
+            
+            <div class="product-item">
+                <img src="images/escorredor-macarrao.png" alt="Escorredor Macarrao">
+                <h2>Escorredor Macarrao</h2>
+            </div>
+
+            <div class="product-item">
+                <img src="images/rodo.png" alt="Rodo Branco em Bambu">
+                <h2>Rodo Branco em Bambu</h2>
+            </div>
+
+            <div class="product-item">
+                <img src="images/vassoura.png" alt="Vassoura e pá Branco em Bambu">
+                <h2>Vassoura e pá Branco em Bambu</h2>
+            </div>      
+
+            <div class="product-item">
+                <img src="images/rodinho.png" alt="Rodinho Branco em Bambu">
+                <h2>Rodinho Branco em Bambu</h2>
+            </div>
+
+            <div class="product-item">
+                <img src="images/cesto.png" alt="Cesto em Bambu">
+                <h2>Cesto em Bambu</h2>
+            </div>
+                        
+            <div class="product-item">
+                <img src="images/pote.png" alt="Pote de Bambu 1L">
+                <h2>Pote de Bambu 1L</h2>
+            </div>
+            
+            <div class="product-item">
+                <img src="images/gelo-redondo.png" alt="Forma de Gelo Redondo">
+                <h2>Forma de Gelo Redondo</h2>
+            </div>
+
+            <div class="product-item">
+                <img src="images/gelo-quadrado.png" alt="Forma de Gelo Quadrado">
+                <h2>Forma de Gelo Quadrado</h2>
+            </div>
+            
+            <div class="product-item">
+                <img src="images/toalha-rosto.png" alt="Toalhas de Rosto Branco">
+                <h2>Toalhas de Rosto Branco</h2>
+            </div>
+
+            <div class="product-item">
+                <img src="images/travesseiro.png" alt="2 Travesseiros Nasa">
+                <h2>2 Travesseiros Nasa</h2>
+            </div>
+
+            <div class="product-item">
+                <img src="images/manta.png" alt="Manta Fleece Branca">
+                <h2>Manta Fleece Branca</h2>
+            </div>
+
+            <div class="product-item">
+                <img src="images/assadeira-bolo.png" alt="Assadeira Bolo">
+                <h2>Assadeira Bolo</h2>
+            </div>
+
+            <div class="product-item">
+                <img src="images/lixeira.png" alt="Lixeira Branca">
+                <h2>Lixeira Branca 1</h2>
+            </div>
+
+            <div class="product-item">
+                <img src="images/lixeira.png" alt="Lixeira Branca">
+                <h2>Lixeira Branca 2</h2>
+            </div>
+
+            <div class="product-item">
+                <img src="images/lixeira.png" alt="Lixeira Branca">
+                <h2>Lixeira Branca 3</h2>
+            </div>
+
+        </section>
+    </main>
+    
+    <footer>
+        <p>Obrigada pela presença e carinho! 💕</p>
+    </footer>
 </body>
 </html>
