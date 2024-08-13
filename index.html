@@ -52,9 +52,9 @@
             <div class="header-text">
                 <h1>Chá de Casa Nova</h1>
                 <p>Lista de Presentes</p>
-                <button id="desvincular-button">Desvincular Produto</button>
             </div>
         </div>
+
     </header>
     
     <main>
@@ -201,7 +201,7 @@
     </main>
     
     <footer>
-        <p>Obrigada pela presença e carinho! 💕</p>
+        <p>Obrigada pela presença e carinho! 💕                  <button id="desvincular-button">Desvincular Produto</button></p>
     </footer>
 
     <div id="vincular-modal" class="modal" style="display:none;">
@@ -223,8 +223,7 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", async function() {
-            const productData = await loadProductData();
-            applyProductData(productData);
+            await applyProductData();
         
             const modal = document.getElementById('vincular-modal');
             const closeButton = document.querySelector('.close-button');
@@ -271,27 +270,54 @@
             confirmButton.addEventListener('click', async function() {
                 const telefone = telefoneInput.value;
         
-                // Se o telefone for válido, prosseguir com a vinculação
-                if (telefone.length >= 7 && telefone.length <= 11) {
+                if (telefone.length > 7 && telefone.length <= 11) {
                     // Atualizar dados no array
-                    const product = productData.find(p => p.id === selectedProduct);
-                    if (product) {
-                        product.telefone = telefone;
-                        product.vinculado = true;
-        
-                        // Salvar dados atualizados no JSON
-                        await saveProductData(productData);
-        
-                        // Reaplicar os dados para atualizar a interface
-                        applyProductData(productData);
+                    const products = await loadProductData();
+                    let product = products.find(p => p.Id === selectedProduct);
+                    if (product && product.Vinculado) {
                         modal.style.display = 'none';
-                        telefoneInput.value = ''; // Limpar o campo de telefone
+                        alert("Produto já vinculado.");
                     }
+                    else{
+                        product = {};
+                        product.Id = selectedProduct;
+                        product.Telefone = telefone;
+                        product.Vinculado = true;
+
+                        var response = await saveProductData(product);
+                        modal.style.display = 'none';
+                        if(!response || response.status > 299)
+                        {
+                            alert("Não foi possivel vincular.");
+                        }
+                        else
+                        {
+                            alert("Vinculado com sucesso!");
+                            await applyProductData();
+                        }
+                    }
+
                 } else {
                     alert("Por favor, insira um telefone válido com 7 a 11 dígitos.");
                 }
+                telefoneInput.value = ''; // Limpar o campo de telefone
             });
         
+            // Validar o telefone enquanto o usuário digita
+            desvincularTelefoneInput.addEventListener('input', function() {
+                const telefone = desvincularTelefoneInput.value;
+        
+                // Remove caracteres não numéricos e limita a entrada a 11 dígitos
+                desvincularTelefoneInput.value = telefone.replace(/[^0-9]/g, '').slice(0, 11);
+        
+                // Checar se o telefone tem menos de 7 números
+                if (desvincularTelefoneInput.value.length < 8) {
+                    desvincularTelefoneInput.setCustomValidity("O telefone deve ter pelo menos 8 dígitos.");
+                } else {
+                    desvincularTelefoneInput.setCustomValidity(""); // Reseta a mensagem de erro se for válida
+                }
+            });
+
             // Abrir modal de Desvincular Produto ao clicar no botão
             desvincularButton.addEventListener('click', function() {
                 desvincularModal.style.display = 'block';
@@ -307,26 +333,32 @@
             desvincularConfirmButton.addEventListener('click', async function() {
                 const telefone = desvincularTelefoneInput.value;
         
-                // Se o telefone for válido, prosseguir com a desvinculação
-                if (telefone.length >= 7 && telefone.length <= 11) {
-                    // Desvincular produtos
-                    productData.forEach(product => {
-                        if (product.telefone === telefone) {
-                            product.telefone = "";
-                            product.vinculado = false;
+        
+                if (telefone.length > 7 && telefone.length <= 11) {
+                    // Atualizar dados no array
+                    const products = await loadProductData();
+                    const product = products.find(p => p.Telefone === telefone);
+                    if (product && product.Vinculado) {
+                        var response = await deleteProductData(telefone);
+                        modal.style.display = 'none';
+                        if(!response || response.status > 299)
+                        {
+                            alert("Não foi possivel desvincular.");
                         }
-                    });
-        
-                    // Salvar dados atualizados no JSON
-                    await saveProductData(productData);
-        
-                    // Reaplicar os dados para atualizar a interface
-                    applyProductData(productData);
-                    desvincularModal.style.display = 'none'; 
-                    desvincularTelefoneInput.value = ''; // Limpar o campo de telefone
+                        else
+                        {
+                            alert("Desvinculado com sucesso!");
+                        }
+                    }
+                    else{
+                        alert("Nenhum produto encontrado para o telefone informado.");
+                    }
+
                 } else {
-                    alert("Por favor, insira um telefone válido com 8 a 11 dígitos.");
+                    alert("Por favor, insira um telefone válido com 7 a 11 dígitos.");
                 }
+                await applyProductData();
+                desvincularTelefoneInput.value = ''; // Limpar o campo de telefone
             });
         
             // Fechar modal se clicar fora da área de conteúdo
@@ -344,28 +376,37 @@
         
             // Função para carregar os dados do arquivo JSON
             async function loadProductData() {
-                const response = await fetch('product/products.json');
-                return await response.json();
+                const response = await fetch('http://izaoejhow-cha.us-east-1.elasticbeanstalk.com/api/products')
+                return response.json();
             }
         
             // Função para salvar os dados no arquivo JSON
             async function saveProductData(data) {
-                await fetch('product/products.json', {
-                    method: 'POST', // Método fictício; ajuste conforme o back-end usado
+                const response = await fetch('http://izaoejhow-cha.us-east-1.elasticbeanstalk.com/api/products', {
+                    method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(data)
                 });
+
+                return response;
+            }
+
+            async function deleteProductData(tel) {
+                const response = await fetch(`http://izaoejhow-cha.us-east-1.elasticbeanstalk.com/api/products?telefone=${tel}`, { method: 'DELETE' });
+
+                return response;
             }
         
             // Função para aplicar os dados na interface
-            function applyProductData(productData) {
+            async function applyProductData() {
+                const products = await loadProductData();
                 document.querySelectorAll('.product-item').forEach(item => {
                     const productId = parseInt(item.getAttribute('data-id'));
-                    const product = productData.find(p => p.id === productId);
+                    const product = products.find(p => p.Id === productId);
         
-                    if (product && product.vinculado) {
+                    if (product && product.Vinculado) {
                         item.classList.add('vinculado');
                     } else {
                         item.classList.remove('vinculado');
