@@ -229,6 +229,22 @@ footer {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+#desvincular-telefone {
+    text-align: center;
+    display: block;
+    width: 60%;
+    color:#555;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#telefone {
+    text-align: center;
+    display: block;
+    width: 60%;
+    color:#555;
+    font-family: 'Courier New', Courier, monospace;
+}
 /* Estilo para o botão no header */
 #desvincular-button {
     text-align: right;
@@ -238,6 +254,7 @@ footer {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+
     font-size: 10px;
     transition: background-color 0.3s;
     margin-right: 4%;

@@ -459,8 +459,7 @@
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <h2>Vincular Produto</h2>
-            <label for="telefone">Insira seu telefone:</label>
-            <input type="text" id="telefone" name="telefone" required>
+            <center><input type="text" id="telefone" name="telefone" placeholder="Digite seu telefone" required></center>
             <button id="confirm-vincular">Vincular</button>
         </div>
     </div>
@@ -469,7 +468,7 @@
             <button class="close-button">&times;</button>
             <h2>Desvincular Produtos</h2>
             <h5>Todos os produtos vinculados ao seu telefone irão ser removidos!</h5>
-            <input type="text" id="desvincular-telefone" placeholder="Digite seu telefone">
+            <center><input type="text" id="desvincular-telefone" placeholder="Digite seu telefone"></center>
             <button id="confirm-desvincular">Desvincular</button>
         </div>
     </div>
@@ -507,8 +506,7 @@
 
             telefoneInput.addEventListener('input', function () {
                 const telefone = telefoneInput.value;
-
-                telefoneInput.value = telefone.replace(/[^0-9]/g, '').slice(0, 11);
+                telefoneInput.value = telefone.replace(/[^\d()-]/g, '').replace(/^(\d{2})(\d)/g, '($1)$2').replace(/(\d{5})(\d)/, '$1-$2').slice(0, 14);
 
                 if (telefoneInput.value.length < 8) {
                     telefoneInput.setCustomValidity("O telefone deve ter pelo menos 8 dígitos.");
@@ -518,7 +516,7 @@
             });
 
             confirmButton.addEventListener('click', async function () {
-                const telefone = telefoneInput.value;
+                const telefone = telefoneInput.value.replace(/[^0-9]/g, '');;
 
                 if (telefone.length > 7 && telefone.length <= 11) {
 
@@ -554,7 +552,7 @@
             desvincularTelefoneInput.addEventListener('input', function () {
                 const telefone = desvincularTelefoneInput.value;
 
-                desvincularTelefoneInput.value = telefone.replace(/[^0-9]/g, '').slice(0, 11);
+                desvincularTelefoneInput.value = telefone.replace(/[^\d()-]/g, '').replace(/^(\d{2})(\d)/g, '($1)$2').replace(/(\d{5})(\d)/, '$1-$2').slice(0, 14);
 
                 if (desvincularTelefoneInput.value.length < 8) {
                     desvincularTelefoneInput.setCustomValidity("O telefone deve ter pelo menos 8 dígitos.");
@@ -573,8 +571,7 @@
             });
 
             desvincularConfirmButton.addEventListener('click', async function () {
-                const telefone = desvincularTelefoneInput.value;
-
+                const telefone = desvincularTelefoneInput.value.replace(/[^0-9]/g, '');;
 
                 if (telefone.length > 7 && telefone.length <= 11) {
                     const products = await loadProductData();
