@@ -202,7 +202,7 @@ footer {
 }
 
 .modal-content button {
-    background-color: #3498db;
+    background-color: #9cc2db;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -213,7 +213,7 @@ footer {
 }
 
 .modal-content button:hover {
-    background-color: #2980b9;
+    background-color: #9cc2db;
 }
 
 /* Ajustes no modal para exibição centralizada */
