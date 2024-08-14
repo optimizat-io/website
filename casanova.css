@@ -56,11 +56,17 @@ main {
     padding: 40px 80px;
 }
 
+main h5{
+    text-align: center;
+    font-size: 0.6em;
+}
+
 .product-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    padding-top: 20px;
     padding-bottom: 200px;
 }
 
