@@ -383,6 +383,10 @@
                     selectedProduct = parseInt(this.closest('.product-item').getAttribute('data-id'));
                     modal.style.display = 'block';
                 });
+                button.addEventListener('touchend', function () {
+                    selectedProduct = parseInt(this.closest('.product-item').getAttribute('data-id'));
+                    modal.style.display = 'block';
+                });
             });
 
             // Fechar modal
