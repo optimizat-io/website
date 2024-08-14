@@ -141,8 +141,6 @@ main {
 
 /* Estilo do rodapé */
 footer {
-
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px 0;
@@ -152,11 +150,7 @@ footer {
     bottom: 0;
     width: 100%;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 80%;
-}
-
-footer p{
-    text-align: center;
+    font-size: 70%;
 }
 
 .modal-content {
@@ -246,6 +240,19 @@ footer p{
     cursor: pointer;
     font-size: 10px;
     transition: background-color 0.3s;
+    margin-right: 4%;
+}
+
+.footer-block-1 {
+    width: 60%;
+    display: inline-block;
+    text-align: right;
+}
+
+.footer-block-2 {
+    display: inline-block;
+    text-align: right;
+    width: 39%;
 }
 
 #desvincular-button:hover {
