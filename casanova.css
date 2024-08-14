@@ -160,7 +160,8 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     width: 400px;
     max-width: 80%;
-    margin: 0 auto;
+    margin: auto;
+    margin-top: 20%;
     position: relative;
     text-align: center;
 }
@@ -233,7 +234,7 @@ footer {
 #desvincular-telefone {
     text-align: center;
     display: block;
-    width: 60%;
+    width: 70%;
     color:#555;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -241,7 +242,7 @@ footer {
 #telefone {
     text-align: center;
     display: block;
-    width: 60%;
+    width: 70%;
     color:#555;
     font-family: 'Courier New', Courier, monospace;
 }
