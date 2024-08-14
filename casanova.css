@@ -42,7 +42,7 @@ header {
 /* Estilo do texto do cabeçalho */
 .header-text h1 {
     font-family: 'Dancing Script', cursive;
-    font-size: 200%;
+    font-size: 180%;
     margin: 0;
 }
 
@@ -152,6 +152,7 @@ footer {
     bottom: 0;
     width: 100%;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 80%;
 }
 
 footer p{
