@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chá de Casa Nova</title>
+    <link rel="icon" type="image/x-icon" href="images/joy.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="casanova.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="profile-pic">
+                <img src="images/joy.png" alt="Foto de Perfil">
+            </div>
+            <div class="header-text">
+                <h1>Painel da Joy</h1>   
+            </div>
+        </div>
+    </header>
+
+    <section id="attendance-panel">
+        <h2>Painel de Presença</h2>
+        <div id="attendance-info">
+            <div id="going-count"><b><span>0</span></b></div>
+            <div id="not-going-count"><b><span>0</span></b></div>
+        </div>
+        <div class="download-buttons">
+            <button id="download-confirmed">Baixar lista de confirmados</button>
+            <button id="download-unconfirmed">Baixar lista de desconfirmados</button>
+        </div>
+    </section>
+
+    <footer>
+        <a href="./index.html" id="voltar-index">Voltar a Lista</a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Função para buscar dados do endpoint
+    fetch('https://api.izaoejhow.com.br/api/people/confirmed')
+        .then(response => response.json())
+        .then(data => {
+            // Atualizar contadores
+            document.querySelector('#going-count span').textContent = data;
+        })
+        .catch(error => console.error('Erro ao buscar dados de presença:', error));
+        fetch('https://api.izaoejhow.com.br/api/people/unconfirmed')
+        .then(response => response.json())
+        .then(data => {
+            // Atualizar contadores
+            document.querySelector('#not-going-count span').textContent = data;
+        })
+        .catch(error => console.error('Erro ao buscar dados de presença:', error));
+
+    // Função para baixar a lista de confirmados
+    document.getElementById('download-confirmed').addEventListener('click', () => {
+        fetch('https://api.izaoejhow.com.br/api/pdf')
+        .then(response => response.blob())
+            .then(blob => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'lista-confirmados.pdf';
+                a.click();
+                URL.revokeObjectURL(url);
+            })
+            .catch(error => console.error('Erro ao baixar lista de confirmados:', error));
+    });
+
+    // Função para baixar a lista de desconfirmados
+    document.getElementById('download-unconfirmed').addEventListener('click', () => {
+        fetch('https://api.izaoejhow.com.br/api/pdf/wontgo')
+        .then(response => response.blob())
+            .then(blob => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'lista-confirmados.pdf';
+                a.click();
+                URL.revokeObjectURL(url);
+            })
+            .catch(error => console.error('Erro ao baixar lista de desconfirmados:', error));
+    });
+});
+
+    </script>
+</body>
+</html>
