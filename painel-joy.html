@@ -40,23 +40,19 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-    // Função para buscar dados do endpoint
     fetch('https://api.izaoejhow.com.br/api/people/confirmed')
         .then(response => response.json())
         .then(data => {
-            // Atualizar contadores
             document.querySelector('#going-count span').textContent = data;
         })
         .catch(error => console.error('Erro ao buscar dados de presença:', error));
         fetch('https://api.izaoejhow.com.br/api/people/unconfirmed')
         .then(response => response.json())
         .then(data => {
-            // Atualizar contadores
             document.querySelector('#not-going-count span').textContent = data;
         })
         .catch(error => console.error('Erro ao buscar dados de presença:', error));
 
-    // Função para baixar a lista de confirmados
     document.getElementById('download-confirmed').addEventListener('click', () => {
         fetch('https://api.izaoejhow.com.br/api/pdf')
         .then(response => response.blob())
@@ -71,7 +67,6 @@
             .catch(error => console.error('Erro ao baixar lista de confirmados:', error));
     });
 
-    // Função para baixar a lista de desconfirmados
     document.getElementById('download-unconfirmed').addEventListener('click', () => {
         fetch('https://api.izaoejhow.com.br/api/pdf/wontgo')
         .then(response => response.blob())
