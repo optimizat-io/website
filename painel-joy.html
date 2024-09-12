@@ -9,6 +9,8 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="casanova.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </head>
 <body>
     <header>
@@ -31,13 +33,364 @@
         <div class="download-buttons">
             <button id="download-confirmed">Baixar lista de confirmados</button>
             <button id="download-unconfirmed">Baixar lista de desconfirmados</button>
+            <button id="download-products">Baixar lista de produtos</button>
         </div>
     </section>
 
     <footer>
         <a href="./index.html" id="voltar-index">Voltar a Lista</a>
     </footer>
+    <section style="display: none;">
+        <div class="product-item" data-id="1">
+            <img src="images/batedeira.png" alt="Batedeira Branca">
+            <h2>Batedeira Branca</h2>
+            <button class="link-button">Vincular</button>
+        </div>
 
+        <div class="product-item" data-id="2">
+            <img src="images/liquidificador.png" alt="Liquidificador Branco">
+            <h2>Liquidificador Branco</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="1000">
+            <img src="images/pote-2.png" alt="Pote de Bambu 250ml">
+            <h2>Pote de Bambu 250ml</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="3">
+            <img src="images/multiprocessador.png" alt="Multiprocessador Branco">
+            <h2>Multiprocessador Branco</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="4">
+            <img src="images/mixer.png" alt="Mixer Branco">
+            <h2>Mixer Branco</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="5">
+            <img src="images/espremedor.png" alt="Espremedor Branco">
+            <h2>Espremedor Branco</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="6">
+            <img src="images/assadeira.png" alt="Assadeira">
+            <h2>Travessa de Forno</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="7">
+            <img src="images/forma-pudim.png" alt="Travessa Pudim de Forno">
+            <h2>Travessa Pudim de Forno</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="8">
+            <img src="images/jarra.png" alt="Jarra de Vidro 2L">
+            <h2>Jarra de Vidro 2L</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="9">
+            <img src="images/escorredor-macarrao.png" alt="Escorredor Macarrao">
+            <h2>Escorredor Macarrao</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="10">
+            <img src="images/rodo.png" alt="Rodo Branco em Bambu">
+            <h2>Rodo Branco em Bambu</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="11">
+            <img src="images/vassoura.png" alt="Vassoura e pá Branco em Bambu">
+            <h2>Vassoura e pá Branco em Bambu</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="12">
+            <img src="images/rodinho.png" alt="Rodinho Branco em Bambu">
+            <h2>Rodinho Branco em Bambu</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="13">
+            <img src="images/cesto.png" alt="Cesto em Bambu">
+            <h2>Cesto em Bambu</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="14">
+            <img src="images/pote.png" alt="Pote de Bambu 1L">
+            <h2>Pote de Bambu 1L</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="15">
+            <img src="images/gelo-redondo.png" alt="Forma de Gelo Redondo">
+            <h2>Forma de Gelo Redondo</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="16">
+            <img src="images/gelo-quadrado.png" alt="Forma de Gelo Quadrado">
+            <h2>Forma de Gelo Quadrado</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="17">
+            <img src="images/toalha-rosto.png" alt="Toalhas de Rosto Branco">
+            <h2>Toalhas de Rosto Branco</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="18">
+            <img src="images/travesseiro.png" alt="2 Travesseiros Nasa">
+            <h2>2 Travesseiros Nasa</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="19">
+            <img src="images/manta.png" alt="Manta Fleece Branca">
+            <h2>Manta Fleece Branca</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="20">
+            <img src="images/assadeira-bolo.png" alt="Assadeira Bolo">
+            <h2>Assadeira Bolo</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="21">
+            <img src="images/lixeira.png" alt="Lixeira Branca">
+            <h2>Lixeira Branca 1</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="22">
+            <img src="images/lixeira.png" alt="Lixeira Branca">
+            <h2>Lixeira Branca 2</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="23">
+            <img src="images/lixeira.png" alt="Lixeira Branca">
+            <h2>Lixeira Branca 3</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="24">
+            <img src="images/abafador-para-cozinha.png" alt="Abafador para Cozinha">
+            <h2>Abafador para Cozinha</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="25">
+            <img src="images/organizador.png" alt="Organizador">
+            <h2>Organizador Acrilico</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="26">
+            <img src="images/colher-sorvete.png" alt="Colher de Sorvete">
+            <h2>Colher de Sorvete</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="27">
+            <img src="images/conchas.png" alt="Conchas">
+            <h2>Conchas</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="28">
+            <img src="images/escorredor-arroz.png" alt="Escorredor de Arroz">
+            <h2>Escorredor de Arroz Inox</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="29">
+            <img src="images/jogo-toalha.png" alt="Jogo de Toalha">
+            <h2>Jogo de Toalha</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="30">
+            <img src="images/mantegueira.png" alt="Mantegueira">
+            <h2>Mantegueira Francesa</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="31">
+            <img src="images/mopi.png" alt="Mopi">
+            <h2>Mopi</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="32">
+            <img src="images/pegador-macarrao.png" alt="Pegador de Macarrão">
+            <h2>Pegador de Macarrão</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="33">
+            <img src="images/toalha-azul-marinho.png" alt="Toalha Azul Marinho">
+            <h2>Toalha Azul Marinho</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="34">
+            <img src="images/toalha-azul.png" alt="Toalha Azul">
+            <h2>Toalha Azul</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="35">
+            <img src="images/toalha-branca.png" alt="Toalha Branca">
+            <h2>Toalha Branca</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="36">
+            <img src="images/toalha-rosa.png" alt="Toalha Rosa">
+            <h2>Toalha Rosa</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="37">
+            <img src="images/panos-de-prato.png" alt="Panos de prato">
+            <h2>Panos de prato</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="38">
+            <img src="images/sanduicheira.png" alt="Sanduicheira Cadence Dream">
+            <h2>Sanduicheira Cadence Dream</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="39">
+            <img src="images/kit-lavabo.png" alt="Kit Lavabo Rosé">
+            <h2>Kit Lavabo Rosé 1</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="40">
+            <img src="images/kit-lavabo.png" alt="Kit Lavabo Rosé">
+            <h2>Kit Lavabo Rosé 2</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+
+        <div class="product-item" data-id="41">
+            <img src="images/kit-lavabo.png" alt="Kit Lavabo Rosé">
+            <h2>Kit Lavabo Rosé 3</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="42">
+            <img src="images/jogo-lencol.png" alt="Jogo Lençol Branco">
+            <h2>Jogo Lençol Branco Queen</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="43">
+            <img src="images/jogo-lencol.png" alt="Jogo Lençol Branco">
+            <h2>Jogo Lençol Branco Queen</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="44">
+            <img src="images/jogo-lencol.png" alt="Jogo Lençol Branco">
+            <h2>Jogo Lençol Branco Queen</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="45">
+            <img src="images/jogo-lencol.png" alt="Jogo Lençol Branco">
+            <h2>Jogo Lençol Branco Queen</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="46">
+            <img src="images/luva.png" alt="Luva">
+            <h2>Luva Termica</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="47">
+            <img src="images/garrafa-cafe.png" alt="Garrafa de Café Branca">
+            <h2>Garrafa de Café Branca</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="48">
+            <img src="images/medidor.png" alt="Copo Medidor">
+            <h2>Copo Medidor</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="49">
+            <img src="images/descanso-panela.png" alt="Descanso de Panela">
+            <h2>Descanso de Panela</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="50">
+            <img src="images/colher-renascenca.png" alt="Colher de Mesa *Tramontina Renascença*">
+            <h2>2 Colheres de Mesa *Tramontina Renascença*</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="51">
+            <img src="images/garfo-renascenca.png" alt="Garfo de Mesa *Tramontina Renascença*">
+            <h2>2 Garfos de Mesa *Tramontina Renascença*</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="52">
+            <img src="images/faca-renascenca.png" alt="Faca de Mesa *Tramontina Renascença*">
+            <h2>2 Facas de Mesa *Tramontina Renascença*</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="53">
+            <img src="images/colher-renascenca.png" alt="Colher de Mesa *Tramontina Renascença*">
+            <h2>2 Colheres de Mesa *Tramontina Renascença*</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="54">
+            <img src="images/garfo-renascenca.png" alt="Garfo de Mesa *Tramontina Renascença*">
+            <h2>2 Garfos de Mesa *Tramontina Renascença*</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="55">
+            <img src="images/faca-renascenca.png" alt="Faca de Mesa *Tramontina Renascença*">
+            <h2>2 Facas de Mesa *Tramontina Renascença*</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="56">
+            <img src="images/colher-renascenca.png" alt="Colher de Mesa *Tramontina Renascença*">
+            <h2>2 Colheres de Mesa *Tramontina Renascença*</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="57">
+            <img src="images/garfo-renascenca.png" alt="Garfo de Mesa *Tramontina Renascença*">
+            <h2>2 Garfos de Mesa *Tramontina Renascença*</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="58">
+            <img src="images/faca-renascenca.png" alt="Faca de Mesa *Tramontina Renascença*">
+            <h2>2 Facas de Mesa *Tramontina Renascença*</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="59">
+            <img src="images/boleira.png" alt="Boleira de Vidro">
+            <h2>Boleira de Vidro</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="60">
+            <img src="images/fruteira.png" alt="Fruteira de Madeira">
+            <h2>Fruteira de Madeira</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+        <div class="product-item" data-id="61">
+            <img src="images/porta-escova.png" alt="Porta Escova">
+            <h2>Porta Escova</h2>
+            <button class="link-button">Vincular</button>
+        </div>
+    </section>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
     fetch('https://api.izaoejhow.com.br/api/people/confirmed')
@@ -80,6 +433,57 @@
             })
             .catch(error => console.error('Erro ao baixar lista de desconfirmados:', error));
     });
+
+     document.getElementById('download-products').addEventListener('click', () => {
+        generatePDFProducts();
+    });
+
+    async function loadProductData2() {
+                const response = await fetch('https://api.izaoejhow.com.br/api/products')
+                return response.json();
+            }
+
+    async function generatePDFProducts() {
+        const products = await loadProductData2();
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        // Selecionar todas as divs de produtos
+        const productItems = document.querySelectorAll('.product-item');
+
+        let yPosVinculado = 20;  // Posição vertical inicial para a coluna 'Vinculado'
+        let yPosNaoVinculado = 20;  // Posição vertical inicial para a coluna 'Não Vinculado'
+
+        // Título do PDF
+        doc.setFontSize(9);
+        doc.text(10, 20, 'Vinculado');
+        doc.text(120, 20, 'Não Vinculado');
+
+        // Iterar sobre os produtos
+        productItems.forEach((item, index) => {
+            const productId = parseInt(item.getAttribute('data-id'));
+            const altText = item.querySelector('img').getAttribute('alt');
+
+            // Procurar o produto no JSON
+            const produtoData = products.find(p => p.Id === productId);
+
+            // Verificar se o produto está vinculado ou não
+            if (produtoData && produtoData.Vinculado) {
+                // Adicionar na coluna de produtos vinculados com o telefone
+                doc.text(10, yPosVinculado + 5, `Telefone: ${produtoData.Telefone}`);
+                doc.text(50, yPosVinculado + 5, `Produto: ${altText}`);
+                
+                yPosVinculado += 5;  // Atualizar a posição Y para o próximo item
+            } else {
+                // Adicionar na coluna de produtos não vinculados
+                doc.text(120, yPosNaoVinculado + 5, `Produto: ${altText}`);
+                yPosNaoVinculado += 5;  // Atualizar a posição Y para o próximo item
+            }
+        });
+
+        // Salvar o PDF com o nome desejado
+        doc.save('produtos-vinculados.pdf');
+        }
 });
 
     </script>
